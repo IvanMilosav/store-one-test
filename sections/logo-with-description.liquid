@@ -1,0 +1,140 @@
+<div class='logos-container'> 
+  <div class='logo-container'>
+    <div class='logo-image-container'>
+  	 <img class='logo-image' alt='logo' src='https://cdn.shopify.com/s/files/1/0565/0386/1271/files/durandal_logo_280x.png?v=1647599717' />
+    </div>
+    <p>Das einzigartige Grillzubehör – made in Europe. Weniger Fett für gesünderes Grillen. Nachhaltig durch Wiedervewendbarkeit. </p>
+  </div> 
+  <div class='logo-container'>
+    <div class='logo-image-container'>
+  	 <img class='logo-image' alt='logo' src='https://cdn.shopify.com/s/files/1/0565/0386/1271/files/logo_thermorex_web_new_280x.png?v=1648199932' />
+    </div>
+    <p>Trinkflaschen für Aktive. Hergestellt aus unverwüstlichem Material - die machen alles mit.</p>
+  </div>
+  <div class='logo-container'>
+    <div class='logo-image-container'>
+  	 <img class='logo-image' alt='logo' src='https://cdn.shopify.com/s/files/1/0565/0386/1271/files/happyglobe_new_280x.jpg?v=1648199932' />
+    </div>
+    <p>Lorem praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur aliquet quam id dui posuere blandit.</p>
+  </div>
+  <div class='logo-container'>
+    <div class='logo-image-container'>
+    	<img class='logo-image' alt='logo' src='https://cdn.shopify.com/s/files/1/0565/0386/1271/files/Untitled3_0dd100e9-5b3e-41d2-9580-ba97912dd0d3_280x.png?v=1647602284' />
+    </div>
+    <p>Stylische Gadgets für das urbane Lebensgefühl.</p>
+  </div>
+  <div class='logo-container'>
+    <div class='logo-image-container'>
+  	 <img class='logo-image' alt='logo' src='https://cdn.shopify.com/s/files/1/0565/0386/1271/files/Untitled4_996bd70d-19cc-45e1-8005-13f2876603c0_280x.png?v=1647602284' />
+    </div>   
+    <p>Clevere Reinigungsprodukte mit ausgesuchten Materialien und erstaunlicher Wirkung. </p>
+  </div>
+  <div class='logo-container'>
+    <div class='logo-image-container'>
+  	 <img class='logo-image' alt='logo' src='https://cdn.shopify.com/s/files/1/0565/0386/1271/files/741482b9-786c-24d4-39f0-3b3bba857af9_new_280x.png?v=1648200426' />
+    </div>
+    <p>Smarte Gartenutensilien. Durchdachte Funktionen und überraschende Extras.</p>
+  </div>
+  <div class='logo-container'>
+    <div class='logo-image-container'>
+  	 <img class='logo-image' alt='logo' src='https://cdn.shopify.com/s/files/1/0565/0386/1271/files/broszio_logo_Signatur_158fb8dc-3c64-458d-baf5-19216a7df676.jpg?v=1656684906' />
+    </div>
+    <p>Ein Partner – viele Produktwelten.</p>
+  </div>
+  <div class='logo-container'>
+    <div class='logo-image-container'>
+  	 <img class='logo-image' alt='logo' src='https://cdn.shopify.com/s/files/1/0565/0386/1271/files/Magic_Tracks_Logo_a4297269-a399-4f0e-8339-7cd061459715.png?v=1656684739' />
+    </div>
+    <p>Die Rennbahn, die sich total verbiegen lässt. Stundenlanger Spielspaß für Junge und die, die nicht älter werden wollen.</p>
+  </div>
+
+</div>
+
+
+<style>
+  .logos-container{
+  	margin:auto;
+    display:flex;
+    max-width:1480px;
+    width:100%;
+    padding:0 40px;
+    box-sizing:border-box;
+    flex-wrap:wrap;
+  }
+  .logo-container{
+    padding:20px;
+    background-color:white;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+    width:25%;
+/*     width: 16.666666666666668%; */
+/*     box-shadow: 1px 0 rgb(225, 227, 228), 0 1px rgb(225, 227, 228); */
+	outline: 1px solid rgb(225, 227, 228);
+    border-right:none;
+    cursor:pointer;
+  }
+  
+  
+  .logo-image-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  	height:100px;
+    width:100%;
+  }
+  .logo-image{
+    max-height:80px;
+    max-width:160px;
+  	align-self:center;
+    margin-bottom:10px;
+    transition: all 0.3s ease-in-out;
+  }
+  .logo-container p{
+  	line-height:1.3em;
+    align-self:flex-start;
+  }
+  .logo-container:hover .logo-image-container .logo-image {
+    transform:scale(1.06);
+  }
+  
+  .logo-container:hover p{
+  	color:#0091d0;
+  }
+  
+  @media(max-width:800px){
+   .logos-container{  
+      padding:0 20px;
+    }
+   .logo-container{
+   	 width:50%;
+  	}
+   .logo-image-container{ 
+  	height:80px;  
+   }
+  .logo-image{
+    max-height:60px;
+    max-width:120px;
+  	
+  }
+  .logo-container p{
+  	line-height:1.1em;
+  } 
+  
+  }
+  
+</style>
+
+{% schema %}
+  {
+    "name": "Logos with description",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

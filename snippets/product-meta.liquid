@@ -1,0 +1,183 @@
+{%- assign selected_variant = product.selected_or_first_available_variant -%}
+
+{%- if block.settings.show_share_buttons -%}
+  {%- capture share_buttons -%}
+    {%- assign share_url = shop.url | append: product.url | url_param_escape -%}
+    {%- assign twitter_text = product.title | url_param_escape -%}
+    {%- assign pinterest_description = product.description | strip_html | truncatewords: 15 | url_param_escape -%}
+    {%- assign pinterest_image = product.featured_media | img_url: '1024x' | prepend: 'https:' -%}
+
+    <ul class="social-media__item-list list--unstyled" role="list">
+      <li class="social-media__item social-media__item--facebook">
+        <a href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.facebook_share' | t }}">{%- render 'icon', icon: 'facebook' -%}</a>
+      </li>
+
+      <li class="social-media__item social-media__item--pinterest">
+        <a href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.pinterest_pin' | t }}">{%- render 'icon', icon: 'pinterest' -%}</a>
+      </li>
+
+      <li class="social-media__item social-media__item--twitter">
+        <a href="https://twitter.com/share?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener" aria-label="{{ 'general.social.twitter_tweet' | t }}">{%- render 'icon', icon: 'twitter' -%}</a>
+      </li>
+
+      <li class="social-media__item">
+        <a href="mailto:?&subject={{ product.title | escape }}&body={{ share_url }}" aria-label="{{ 'general.social.email_share' | t }}">{% render 'icon', icon: 'email' %}</a>
+      </li>
+    </ul>
+  {%- endcapture -%}
+{%- endif -%}
+
+<div class="product-meta">
+  {%- if template.name == 'product' and template != 'product.quick-view' -%}
+    <h1 class="product-meta__title heading h1">{{ product.title }}</h1>
+  {%- else -%}
+    <h3 class="product-meta__title heading h2">
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h3>
+  {%- endif -%}
+
+  {%- capture product_labels -%}
+    {%- for tag in product.tags -%}
+      {%- if tag contains '__label:' -%}
+        <span class="product-label product-label--custom1">{{ tag | split: '__label:' | last }}</span>
+      {%- endif -%}
+
+      {%- if tag contains '__label1:' -%}
+        <span class="product-label product-label--custom1">{{ tag | split: '__label1:' | last }}</span>
+      {%- endif -%}
+
+      {%- if tag contains '__label2:' -%}
+        <span class="product-label product-label--custom2">{{ tag | split: '__label2:' | last }}</span>
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if settings.show_discount -%}
+      {%- assign savings = 0 -%}
+
+      {%- if settings.discount_mode == 'percentage' -%}
+        {%- assign savings = selected_variant.compare_at_price | minus: selected_variant.price | times: 100.0 | divided_by: selected_variant.compare_at_price | round | append: '%' -%}
+      {%- else -%}
+        {%- capture savings -%}<span>{{ selected_variant.compare_at_price | minus: selected_variant.price | money }}</span>{%- endcapture -%}
+      {%- endif -%}
+
+      <span class="product-label product-label--on-sale" {% unless selected_variant.price < selected_variant.compare_at_price %}style="display: none"{% endunless %}>{{ 'collection.product.discount_html' | t: savings: savings }}</span>
+    {%- endif -%}
+  {%- endcapture -%}
+
+  {%- if product_labels != blank -%}
+    <div class="product-meta__label-list">
+      {{- product_labels -}}
+    </div>
+  {%- endif -%}
+
+  {%- if block.settings.show_vendor or block.settings.show_sku -%}
+    <div class="product-meta__reference">
+      {%- if block.settings.show_vendor -%}
+        {%- assign vendor_handle = product.vendor | handle -%}
+        {%- assign collection_for_vendor = collections[vendor_handle] -%}
+
+      
+      {%assign has_logo = false %}
+      
+     {% for collection in product.collections %}
+     
+        {% if collection.title == 'Durandal' %}
+          <a href="https://broszio.myshopify.com/collections/durandal">       	
+          <img  class="image--fade-in ls-is-cached lazyloaded collection_header_logo_img_durandal meta_product_image " alt="logo" src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/durandal_logo_280x.png?v=1647599717">
+          </a>
+      {%assign has_logo = true %} {%break%} 
+      
+      {%elsif collection.title == 'Sauber Meister' %}
+          <a href="https://broszio.myshopify.com/collections/sauber-meister">      
+          <img class="image--fade-in ls-is-cached lazyloaded collection_header_logo_img meta_product_image" alt="logo" src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/Untitled4_280x_dbae9d54-14cb-4e24-988e-fedead7cc171.png?v=1647869676" >
+          </a>
+      {%assign has_logo = true %} {%break%} 
+      
+      {%elsif collection.title == 'Gardirex' %}
+          <a href="https://broszio.myshopify.com/collections/gardirex">      
+          <img class="image--fade-in ls-is-cached lazyloaded collection_header_logo_img meta_product_image" alt="logo" src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/741482b9-786c-24d4-39f0-3b3bba857af9_new.png?v=1648200426" >
+          </a>
+      {%assign has_logo = true %} {%break%} 
+      
+      {%elsif collection.title == 'Happy Globe' %}
+          <a href="https://broszio.myshopify.com/collections/happy-globe">      
+          <img class="image--fade-in ls-is-cached lazyloaded collection_header_logo_img_higher meta_product_image" alt="logo" src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/happyglobe_new.jpg?v=1648199932" >
+          </a>
+      {%assign has_logo = true %} {%break%} 
+      
+      {%elsif collection.title == 'Thermo Rex' %}
+          <a href="https://broszio.myshopify.com/collections/thermo-rex">      
+          <img class="image--fade-in ls-is-cached lazyloaded collection_header_logo_img_higher meta_product_image" alt="logo" src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/logo_thermorex_web_new.png?v=1648199932" >
+          </a>
+      {%assign has_logo = true %} {%break%} 
+      
+      {%elsif collection.title == 'Go Lucky' %}
+          <a href="https://broszio.myshopify.com/collections/go-lucky">      
+          <img  class="image--fade-in ls-is-cached lazyloaded collection_header_logo_img meta_product_image" alt="logo" src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/Untitled3_280x_1b96df01-cb80-4cb5-a301-c6ea4b681c7a.png?v=1647869676" >
+          </a>
+      {%assign has_logo = true %} {%break%}  
+      
+      {%elsif collection.title == 'Astonish' %}
+          <a href="https://broszio.myshopify.com/collections/astonish">      
+          <img  class="image--fade-in ls-is-cached lazyloaded collection_header_logo_img_durandal meta_product_image" alt="logo" src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/astonish-logo.gif?v=1647954391" >
+          </a>
+      {%assign has_logo = true %} {%break%} 
+      
+      {%elsif collection.title == 'Magic Freeze' %}
+          <a href="https://broszio.myshopify.com/collections/magic-freeze">      
+          <img  class="image--fade-in ls-is-cached lazyloaded collection_header_logo_img_durandal meta_product_image" alt="logo" src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/Magic-Freez-logo_quer_weblkbB83ZExpmC0.png?v=1647954775" >
+          </a>
+      {%assign has_logo = true %} {%break%} 
+      
+      {%elsif collection.title == 'Magic Tracks' %}
+          <a href="https://broszio.myshopify.com/collections/magic-tracks">      
+          <img  class="image--fade-in ls-is-cached lazyloaded collection_header_logo_img_durandal meta_product_image" alt="logo" src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/Magic_Tracks_Logo.png?v=1647954775" >
+          </a>
+      {%assign has_logo = true %} {%break%} 
+      
+      {%endif%}
+     {% endfor %}  
+      
+      
+     {%- if has_logo == false -%} 
+          <a href="https://broszio.myshopify.com/collections/broszio">
+            <img class="image--fade-in ls-is-cached lazyloaded collection_header_logo_img_durandal meta_product_image" alt="logo" src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/broszio_logo_Signatur.jpg?v=1647862963" > 
+          </a>
+            <!-- <img style='max-height: 35px;' class="image--fade-in ls-is-cached lazyloaded" data-src="//cdn.shopify.com/s/files/1/0565/0386/1271/files/durandal_logo_280x.png?v=1647599717" alt="" src="//cdn.shopify.com/s/files/1/0565/0386/1271/files/durandal_logo_280x.png?v=1647599717"></a>-->
+            
+     {% endif %}
+      
+      
+      
+        {%- unless collection_for_vendor.empty? -%}
+          <a class="product-meta__vendor link link--accented" href="{{ collection_for_vendor.url }}">{{ product.vendor }}</a>
+        {%- else -%}
+          <a class="product-meta__vendor link link--accented" href="{{ product.vendor | url_for_vendor }}">{{ product.vendor }}</a>
+        {%- endunless -%}
+      {%- endif -%}
+
+     {%comment%} {%- if block.settings.show_sku -%}
+        <span class="product-meta__sku" {% if selected_variant.sku == blank %}style="display: none"{% endif %}>
+          {{- 'product.general.sku' | t -}} <span class="product-meta__sku-number">{{ selected_variant.sku }}</span>
+        </span>
+        <span class="product-meta__barcode" {% if selected_variant.barcode == blank %}style="display: none"{% endif %}>
+          {{- 'product.general.barcode' | t -}} <span class="product-meta__barcode-number" id='selected-variant-barcode'>{{ selected_variant.barcode }}</span>
+        </span>
+      {%- endif -%} {%endcomment%}
+    </div>
+  {%- endif -%}
+
+  {%- if block.settings.show_reviews_badge -%}
+    <a href="{% if template.name != 'product' or template == 'product.quick-view' %}{{ product.url }}{% endif %}#product-reviews" class="product-meta__reviews-badge link" data-offset="30">
+      {%- render 'product-rating', product: product -%}
+    </a>
+  {%- endif -%}
+
+  {%- if block.settings.show_share_buttons -%}
+    <div class="product-meta__share-buttons hidden-phone">
+      {{ share_buttons }}
+    </div>
+  {%- endif -%}
+</div>
+
+<hr class="card__separator">

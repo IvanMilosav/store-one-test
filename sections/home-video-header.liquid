@@ -1,0 +1,150 @@
+<div class='home-video-container'>
+  
+ <a class='video-holder' href="https://broszio.myshopify.com/products/durandal-selection-grilltasche?_pos=1&_sid=4f59e1a36&_ss=r">
+  <video poster="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/poster_desktop_video_home.png?v=1657711146" class='home-video' autoplay="" muted="" loop="" playsinline="" >
+    <source src="https://cdn.shopify.com/videos/c/o/v/ae784cb7dac24c8b89ab45c2b02327ad.mp4">
+  </video>
+  <div class='home-logo-holder'> <img src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/Logo-black.png?v=1655217289" alt="logo_image"></div>
+  <div class='home-video-button'>Das perfekte Grillergebnis - einfach und schanell!</div>  
+ </a>
+  
+ <a class='video-holder-mobile' href="https://broszio.myshopify.com/products/durandal-selection-grilltasche?_pos=1&_sid=4f59e1a36&_ss=r">
+  <video poster="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/poster_mobile_video_home.png?v=1657711145" class='home-video-mobile' autoplay="" muted="" loop="" playsinline=""  >
+    <source src="https://cdn.shopify.com/videos/c/o/v/533b86f0310f4b01b7e89ff38b686079.mp4">
+  </video>
+  <div class='home-logo-holder'> <img src="https://cdn.shopify.com/s/files/1/0565/0386/1271/files/Logo-black.png?v=1655217289" alt="logo_image"></div>
+  <div class='home-video-button'>Das perfekte Grillergebnis - einfach und schanell!</div> 
+ </a>
+   
+</div>
+
+
+<style>
+  .home-video-container{
+  	width:100%;
+    padding:50px 40px 0 40px;
+    display:flex;
+   	justify-content:center;
+  }
+  .video-holder{
+  	position:relative;
+    width:auto;
+    margin-bottom:-10px;
+    cursor:pointer;
+  }
+  .video-holder-mobile{
+  	position:relative;
+    display:none;
+  }
+  .home-video{
+  	max-width:100%;
+  }
+  .home-video-mobile{
+  	max-width:100%;
+  }
+  
+  
+  
+@media(max-width:640px){
+  .home-video-container{
+    padding:0px;
+   }
+   .video-holder{
+  	display:none;
+   }
+  .video-holder-mobile{
+  	display:block;
+   }
+}
+ 
+  
+/* logo inside home big promo slider*/
+.home-logo-holder{
+	height:70px;
+  	width:200px;
+  	padding:10px;
+  	position:absolute;
+  	top:10px;
+  	left:10px;
+  	display:flex;
+  	align-items:center;
+  	justify-content:center;
+  	background-color:white;
+  
+}
+
+.home-logo-holder img{
+  	position:static;
+	height:auto;
+  	width:auto;
+}
+@media (max-width:640px){
+ .home-logo-holder{
+	height:50px;
+  	width:140px;
+  	padding:8px;	
+   	left:20px;
+   	top:20px;
+ }
+ .home-logo-holder img{
+	position:static;
+	height:auto;
+  	width:auto;
+ }
+}
+/* button inside home big promo slider*/
+.home-video-button{ 
+	position:absolute;
+  	bottom:20px;
+  	left:50%;
+    transform: translateX(-50%);
+  	background:#004f96;
+  	color:white;
+    padding: 0 30px;
+    line-height: 56px;
+    border-radius: 2px;
+    text-align: center;
+  	width:600px;
+  	font-size:18px;
+  	
+}
+
+@media(max-width:1000px){
+  .home-video-button{
+  	width:450px;
+    font-size:16px;
+    line-height: 46px;
+  }
+}
+@media(max-width:850px){
+  .home-video-button{
+    font-size:13px;
+  }
+}
+@media(max-width:640px){
+  .home-video-button{
+  	width:330px;
+    padding: 0 20px;
+    font-size:12px;
+    bottom:30px;
+  }
+}
+
+.video-holder:hover .home-video-button{
+	background:#0091d0;
+}  
+
+</style>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
