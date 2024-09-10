@@ -333,7 +333,7 @@
       "settings": {
         "title": "Our collections",
         "link_title": "View all",
-        "link": "shopify:\/\/collections\/frontpage",
+        "link": "shopify:\/\/collections\/hello",
         "round_images": true,
         "show_collection_title": true
       }
