@@ -281,35 +281,14 @@
         "collection-3": {
           "type": "collection",
           "settings": {
-            "collection": "neuheiten",
+            "collection": "hello",
             "link": ""
           }
         },
         "collection-2": {
           "type": "collection",
           "settings": {
-            "collection": "sport-freizeit",
-            "link": ""
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "diy",
-            "link": ""
-          }
-        },
-        "collection-4": {
-          "type": "collection",
-          "settings": {
-            "collection": "beauty",
-            "link": ""
-          }
-        },
-        "collection-5": {
-          "type": "collection",
-          "settings": {
-            "collection": "haushalt",
+            "collection": "",
             "link": ""
           }
         },
@@ -324,12 +303,8 @@
       "block_order": [
         "collection-3",
         "collection-2",
-        "collection-1",
-        "collection-4",
-        "collection-5",
         "collection-6"
       ],
-      "disabled": true,
       "settings": {
         "title": "Our collections",
         "link_title": "View all",
