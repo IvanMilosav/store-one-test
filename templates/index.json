@@ -602,6 +602,68 @@
       "settings": {
         "section_size": "medium"
       }
+    },
+    "collection_list_7Aef8b": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_RbTiPQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "link": ""
+          }
+        },
+        "collection_49cRCc": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "link": ""
+          }
+        },
+        "collection_wXchBr": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "link": ""
+          }
+        },
+        "collection_wjdUrW": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "link": ""
+          }
+        },
+        "collection_nt7nBA": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "link": ""
+          }
+        },
+        "collection_emwQAU": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_RbTiPQ",
+        "collection_49cRCc",
+        "collection_wXchBr",
+        "collection_wjdUrW",
+        "collection_nt7nBA",
+        "collection_emwQAU"
+      ],
+      "settings": {
+        "title": "Our collections",
+        "link_title": "View all",
+        "link": "shopify:\/\/collections",
+        "round_images": true,
+        "show_collection_title": true
+      }
     }
   },
   "order": [
@@ -618,6 +680,7 @@
     "text-with-icons",
     "1647598665e58acf0a",
     "16475987157b142613",
-    "1647598721f24512fb"
+    "1647598721f24512fb",
+    "collection_list_7Aef8b"
   ]
 }
