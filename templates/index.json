@@ -21,6 +21,7 @@
         "26cbecb3-c001-49b9-aa3d-2e8e69a6a5dc": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/woman-in-the-city_925x_371f7fb2-0ebc-4ad9-aad3-c6033471bdad.jpg",
             "slider_button_text": "Das perfekte Grillergebnis - einfach und schnell!",
             "show_overlay": false,
             "overlay_opacity": 30,
@@ -37,6 +38,7 @@
         "slide-1": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/urban-fashion_925x_4b9d692c-62e0-44bb-818e-e5e0c1dd32ca.jpg",
             "slider_button_text": "Coole Sachen, die Sachen cool machen!",
             "show_overlay": false,
             "overlay_opacity": 30,
@@ -126,7 +128,6 @@
         "30dd8ac6-2945-46f1-b78f-1a23b5eb8160",
         "slide-2"
       ],
-      "disabled": true,
       "settings": {
         "edge_to_edge": false,
         "section_size": "preserve_ratio",
