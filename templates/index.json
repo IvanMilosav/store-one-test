@@ -141,6 +141,7 @@
         "164759919648e57961-0": {
           "type": "item",
           "settings": {
+            "image": "shopify:\/\/shop_images\/womens-red-t-shirt_925x_0729a3ff-f1be-479e-b88e-1141216c1421.jpg",
             "show_overlay": false,
             "overlay_opacity": 50,
             "stretch_image": true,
@@ -158,6 +159,7 @@
         "164759919648e57961-1": {
           "type": "item",
           "settings": {
+            "image": "shopify:\/\/shop_images\/smiling-woman-poses_925x_4ffd85a2-9118-426a-9860-3579689a4a7d.jpg",
             "show_overlay": false,
             "overlay_opacity": 50,
             "stretch_image": true,
@@ -175,13 +177,14 @@
         "164759919648e57961-2": {
           "type": "item",
           "settings": {
+            "image": "shopify:\/\/shop_images\/smiling-woman-on-snowy-afternoon_925x_5015b38a-450e-4d6c-8406-9ee14c9aff23.jpg",
             "show_overlay": false,
-            "overlay_opacity": 50,
+            "overlay_opacity": 100,
             "stretch_image": true,
             "background": "#26c1ce",
             "text_color": "#ffffff",
-            "title": "",
-            "content": "",
+            "title": "Heading example",
+            "content": "Text example",
             "content_position": "bottom_right",
             "button_background": "#004f96",
             "button_text_color": "#ffffff",
@@ -196,9 +199,9 @@
         "164759919648e57961-2"
       ],
       "settings": {
-        "expand_items": false,
+        "expand_items": true,
         "section_size": "medium",
-        "stack_mobile": false
+        "stack_mobile": true
       }
     },
     "1647598900f2a2f772": {
